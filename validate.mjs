@@ -72,6 +72,8 @@ try {
   await call('Runtime.enable');
   await call('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
   await navigate();
+  await evaluate(`localStorage.clear(); true`);
+  await navigate();
   assert.equal(await evaluate(`document.title`), '暧昧加载中｜你在暧昧期是哪一派？');
   assert.equal(await evaluate(`document.querySelector('#start-view').hidden`), false);
   assert.equal(await evaluate(`window.__zhaoren.questions.length`), 12);
