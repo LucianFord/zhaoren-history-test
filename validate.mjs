@@ -17,6 +17,7 @@ const server = http.createServer((request, response) => {
 });
 await new Promise(resolve => server.listen(0, '0.0.0.0', resolve));
 const port = server.address().port;
+const targetUrl = process.env.TARGET_URL || `http://127.0.0.1:${port}/`;
 const cdpPort = Number(process.env.CDP_PORT || 9222);
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 let ws;
@@ -63,7 +64,7 @@ try {
   const click = id => evaluate(`document.getElementById(${JSON.stringify(id)}).click(); true`);
   const answer = index => evaluate(`document.querySelector('#options .option[data-index="${index}"]').click(); true`);
   const navigate = async () => {
-    await call('Page.navigate', { url: `http://127.0.0.1:${port}/` });
+    await call('Page.navigate', { url: targetUrl });
     await delay(1000);
   };
 
