@@ -72,12 +72,12 @@ try {
   await call('Runtime.enable');
   await call('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
   await navigate();
-  assert.equal(await evaluate(`document.title`), '照人｜你的行事风格像哪位历史人物？');
+  assert.equal(await evaluate(`document.title`), '暧昧加载中｜你在暧昧期是哪一派？');
   assert.equal(await evaluate(`document.querySelector('#start-view').hidden`), false);
   assert.equal(await evaluate(`window.__zhaoren.questions.length`), 12);
   assert.equal(await evaluate(`Object.keys(window.__zhaoren.figures).length`), 6);
   await screenshot('desktop-start.png');
-  passed('首屏加载、12 道题和 6 类人物完整');
+  passed('首屏加载、12 道题和 6 类反应完整');
 
   await click('start-btn');
   await answer(0); await answer(1); await answer(2);
@@ -99,16 +99,20 @@ try {
     await delay(30);
   }
   assert.equal(await evaluate(`document.querySelectorAll('#matches .match').length`), 6);
+  assert.equal(await evaluate(`document.querySelector('#matches .match').dataset.figure`), await evaluate(`window.__zhaoren.calculate().primary`));
   assert.ok(await evaluate(`document.getElementById('result-name').innerText.length > 0`));
   assert.equal(await evaluate(`window.__zhaoren.getEvents().filter(e => e.type === 'complete').length`), 1);
   assert.ok(await evaluate(`window.__zhaoren.drawCard().toDataURL('image/png').length > 20000`));
+  await evaluate(`document.getElementById('nickname').value = '小测'; true`);
+  const cardData = await evaluate(`window.__zhaoren.drawCard().toDataURL('image/png').split(',')[1]`);
+  fs.writeFileSync(path.join(output, 'share-card.png'), Buffer.from(cardData, 'base64'));
   await screenshot('desktop-result.png');
   passed('完整答题、结果计分、事件记录和结果卡生成');
 
   await click('share-btn');
   await delay(100);
   assert.match(await evaluate(`document.getElementById('toast').innerText`), /已复制/);
-  assert.match(await evaluate(`window.__zhaoren.shareText()`), /我的行事风格像/);
+  assert.match(await evaluate(`window.__zhaoren.shareText()`), /我在暧昧期是/);
   passed('分享文案复制与反馈');
 
   const figures = await evaluate(`Object.keys(window.__zhaoren.figures)`);
@@ -128,7 +132,7 @@ try {
     assert.equal(await evaluate(`window.__zhaoren.calculate().primary`), figure);
     assert.equal(await evaluate(`document.querySelector('#result-view').hidden`), false);
   }
-  passed('6 类人物均可通过真实答题路径得到');
+  passed('6 类反应均可通过真实答题路径得到');
 
   await click('restart-btn');
   await click('start-btn');

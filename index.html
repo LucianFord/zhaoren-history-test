@@ -3,401 +3,168 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3eddf">
-  <meta name="description" content="12 道日常情境题，找到与你行事风格相近的历史人物。原创趣味测试，附可保存的结果卡。">
-  <meta property="og:title" content="你的行事风格像哪位历史人物？">
-  <meta property="og:description" content="不讲历史考点，只看你如何做选择。12 题生成你的历史人物结果卡。">
-  <title>照人｜你的行事风格像哪位历史人物？</title>
+  <meta name="theme-color" content="#f7f3ef">
+  <meta name="description" content="12 个暧昧期真实瞬间，看看你的第一反应是哪一派。原创趣味测试，生成专属结果卡。">
+  <meta property="og:title" content="你在暧昧期，到底是哪一派？">
+  <meta property="og:description" content="回消息、被靠近、想退缩。12 个瞬间，看看你在暧昧里的习惯反应。">
+  <title>暧昧加载中｜你在暧昧期是哪一派？</title>
   <style>
-    :root{--paper:#f3eddf;--paper-deep:#e7dcc7;--ink:#202723;--muted:#6d7168;--red:#a54432;--red-dark:#793124;--green:#365d50;--line:rgba(45,55,46,.16);--white:#fffdf7;--shadow:0 24px 70px rgba(50,42,27,.12)}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;min-width:320px;color:var(--ink);background:var(--paper);font-family:"Noto Serif SC","Songti SC","STSong",serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.3;background-image:repeating-linear-gradient(0deg,transparent 0 3px,rgba(70,55,30,.025) 3px 4px)}
-    button,a{font:inherit}
-    button{cursor:pointer}
-    button:focus-visible,a:focus-visible{outline:3px solid rgba(165,68,50,.35);outline-offset:4px}
-    [hidden]{display:none!important}
-    .shell{width:min(1080px,calc(100% - 40px));margin:auto;position:relative}
-    .topbar{height:92px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2em}
-    .brand-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--red);color:var(--red);font-size:20px;letter-spacing:0;transform:rotate(-4deg)}
-    .topnote{font-family:system-ui,sans-serif;font-size:12px;color:var(--muted);letter-spacing:.12em}
-    .view{padding:64px 0 72px;min-height:calc(100vh - 160px)}
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
-    .eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 22px;color:var(--red);font-family:system-ui,sans-serif;font-size:13px;font-weight:650;letter-spacing:.18em}
-    .eyebrow::before{content:"";width:32px;height:1px;background:var(--red)}
-    h1{margin:0;font-size:clamp(42px,6.3vw,76px);font-weight:600;line-height:1.18;letter-spacing:-.035em}
-    h1 em{color:var(--red);font-style:normal}
-    .lead{max-width:570px;margin:28px 0 0;color:#555e56;font-size:17px}
-    .actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:36px}
-    .primary{border:0;background:var(--red);color:#fffaf0;padding:15px 28px;min-height:54px;box-shadow:5px 5px 0 var(--red-dark);transition:transform .15s,box-shadow .15s}
-    .primary:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--red-dark)}
-    .secondary{border:1px solid var(--line);color:var(--ink);background:transparent;padding:13px 22px;min-height:50px}
-    .text-button{border:0;background:none;color:var(--muted);padding:10px 0;text-decoration:underline;text-underline-offset:5px}
-    .micro{font-family:system-ui,sans-serif;font-size:12px;color:var(--muted)}
-    .hero-art{position:relative;min-height:470px;display:grid;place-items:center}
-    .arch{position:absolute;width:310px;height:410px;border:1px solid rgba(54,93,80,.25);border-radius:160px 160px 0 0;background:rgba(255,253,247,.28)}
-    .arch::before,.arch::after{content:"";position:absolute;border:1px solid rgba(54,93,80,.13);border-radius:160px 160px 0 0;inset:18px}
-    .arch::after{inset:36px}
-    .figure-card{position:relative;width:260px;padding:34px 28px;background:var(--white);box-shadow:var(--shadow);transform:rotate(2deg);text-align:center;border-top:4px solid var(--green)}
-    .figure-card .seal{margin:0 auto 20px;width:58px;height:58px;display:grid;place-items:center;background:var(--red);color:#fff8e8;font-size:30px;box-shadow:inset 0 0 0 4px var(--red),inset 0 0 0 5px rgba(255,255,255,.6)}
-    .figure-card h2{font-size:30px;margin:0 0 8px;font-weight:600}
-    .figure-card p{margin:0;color:var(--muted);font-size:14px}
-    .figure-card .lines{margin:26px auto 0;display:grid;gap:10px}
-    .figure-card .lines i{display:block;height:1px;background:var(--line)}
-    .figure-card .lines i:nth-child(2){width:75%;margin:auto}
-    .figure-card .lines i:nth-child(3){width:45%;margin:auto}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px;border-top:1px solid var(--line);padding-top:28px}
-    .feature{display:flex;gap:12px;font-family:system-ui,sans-serif}
-    .feature b{font-family:Georgia,serif;color:var(--red);font-size:22px;font-weight:400}
-    .feature span{font-size:13px;color:var(--muted)}
-    .feature strong{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}
-    .quiz-wrap{max-width:760px;margin:0 auto}
-    .quiz-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:26px}
-    .count{font-family:Georgia,serif;font-size:15px;color:var(--muted)}
-    .count strong{font-size:36px;color:var(--red);font-weight:400}
-    .dimension{font-size:13px;color:var(--green);letter-spacing:.16em}
-    .progress{height:3px;background:var(--line);margin-bottom:42px;overflow:hidden}
-    .progress span{display:block;height:100%;width:0;background:var(--red);transition:width .25s}
-    .question-card{background:rgba(255,253,247,.72);border:1px solid rgba(255,255,255,.7);padding:42px;box-shadow:var(--shadow)}
-    .question-card h2{font-size:clamp(24px,3.8vw,34px);font-weight:600;line-height:1.45;margin:0 0 28px}
-    .options{display:grid;gap:12px}
-    .option{display:flex;align-items:flex-start;gap:16px;width:100%;text-align:left;border:1px solid var(--line);background:transparent;color:var(--ink);padding:17px 18px;transition:border-color .15s,background .15s,transform .15s}
-    .option:hover{border-color:var(--red);background:#fffaf0;transform:translateX(3px)}
-    .option .letter{flex:0 0 28px;height:28px;display:grid;place-items:center;border:1px solid var(--line);font-family:Georgia,serif;color:var(--muted);font-size:13px}
-    .option.selected{border-color:var(--red);background:#f8e9df}
-    .option.selected .letter{background:var(--red);border-color:var(--red);color:white}
-    .quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
-    .result-wrap{max-width:880px;margin:auto}
-    .result-top{text-align:center;margin-bottom:34px}
-    .result-top .eyebrow{justify-content:center}
-    .result-top .eyebrow::before{display:none}
-    .result-name{font-size:clamp(54px,9vw,90px);margin:4px 0 10px;line-height:1.1;color:var(--red);font-weight:500}
-    .result-title{font-size:20px;margin:0;color:var(--green)}
-    .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .panel{background:rgba(255,253,247,.75);border:1px solid rgba(255,255,255,.8);padding:32px;box-shadow:var(--shadow)}
-    .panel h3{margin:0 0 16px;font-size:15px;letter-spacing:.12em;color:var(--muted);font-family:system-ui,sans-serif}
-    .result-copy{font-size:17px;margin:0 0 22px}
-    .history{border-left:3px solid var(--green);padding-left:16px;color:var(--muted);font-size:13px}
-    .strengths{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
-    .strengths li{padding:5px 12px;border:1px solid var(--line);font-size:13px;color:var(--green)}
-    .watch{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:14px}
-    .match{display:grid;grid-template-columns:72px 1fr 40px;gap:12px;align-items:center;margin:15px 0;font-family:system-ui,sans-serif;font-size:13px}
-    .bar{height:6px;background:var(--paper-deep)}
-    .bar span{display:block;height:100%;background:var(--green)}
-    .match:first-of-type .bar span{background:var(--red)}
-    .match output{text-align:right;color:var(--muted)}
-    .result-actions{justify-content:center;margin:34px 0 18px}
-    .disclaimer{text-align:center;color:var(--muted);font:12px/1.7 system-ui,sans-serif;max-width:600px;margin:0 auto}
-    .footer{border-top:1px solid var(--line);padding:20px 0 28px;display:flex;justify-content:space-between;color:var(--muted);font:12px system-ui,sans-serif}
-    .toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--white);padding:11px 20px;font:13px system-ui,sans-serif;transition:.2s;pointer-events:none;z-index:5}
-    .toast.show{opacity:1;transform:translate(-50%,0)}
-    #share-canvas{display:none}
-    @media(max-width:760px){.shell{width:min(100% - 28px,1080px)}.topbar{height:72px}.topnote{display:none}.view{padding:38px 0 50px}.hero{grid-template-columns:1fr;gap:30px}.hero-art{min-height:340px;order:-1}.arch{width:230px;height:290px}.figure-card{width:210px;padding:24px}.figure-card .seal{width:46px;height:46px;font-size:24px}.features{grid-template-columns:1fr;margin-top:38px;gap:16px}.feature{align-items:center}.question-card{padding:26px 20px}.result-grid{grid-template-columns:1fr}.result-actions{display:grid;grid-template-columns:1fr}.result-actions button{width:100%}.footer{gap:20px}.result-name{font-size:58px}}
+    :root{--paper:#f7f3ef;--card:#fffdfb;--ink:#29252b;--muted:#79727b;--red:#d65770;--red-dark:#9e394e;--green:#47786c;--soft:#f0e6e8;--line:rgba(55,43,53,.13);--shadow:0 22px 60px rgba(65,43,53,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--paper);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}button,a,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid rgba(214,87,112,.25);outline-offset:4px}[hidden]{display:none!important}.shell{width:min(1080px,calc(100% - 40px));margin:auto}.topbar{height:86px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.06em}.brand-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--red);color:white;font-size:17px}.topnote{font-size:12px;color:var(--muted)}.view{padding:58px 0 70px;min-height:calc(100vh - 150px)}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}.eyebrow{margin:0 0 20px;color:var(--red);font-size:13px;font-weight:700;letter-spacing:.12em}h1{margin:0;font-size:clamp(42px,6vw,70px);line-height:1.2;letter-spacing:-.045em;font-weight:750}h1 em{font-style:normal;color:var(--red)}.lead{max-width:560px;margin:26px 0 0;color:#655e67;font-size:16px}.actions{display:flex;align-items:center;gap:17px;flex-wrap:wrap;margin-top:34px}.primary{border:0;border-radius:14px;background:var(--red);color:white;padding:15px 27px;min-height:54px;box-shadow:0 7px 0 var(--red-dark);transition:transform .15s,box-shadow .15s}.primary:hover{transform:translateY(2px);box-shadow:0 5px 0 var(--red-dark)}.secondary{border:1px solid var(--line);border-radius:14px;color:var(--ink);background:var(--card);padding:13px 22px;min-height:50px}.text-button{border:0;background:none;color:var(--muted);padding:10px 0;text-decoration:underline;text-underline-offset:5px}.micro{font-size:12px;color:var(--muted)}.hero-art{display:grid;place-items:center;min-height:455px}.phone{width:330px;background:var(--card);border:1px solid rgba(255,255,255,.8);border-radius:32px;padding:22px 20px 26px;box-shadow:var(--shadow);transform:rotate(2deg)}.phone-top{display:flex;align-items:center;gap:10px;padding:0 4px 18px;border-bottom:1px solid var(--line);font-size:13px}.avatar{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e5d8ce}.online{margin-left:auto;color:var(--green);font-size:11px}.chat{display:grid;gap:13px;padding-top:22px}.bubble{max-width:87%;padding:11px 14px;border-radius:17px;font-size:14px;line-height:1.55}.bubble.left{background:#f0ece9;border-bottom-left-radius:5px;justify-self:start}.bubble.right{background:var(--red);color:white;border-bottom-right-radius:5px;justify-self:end}.bubble.thought{background:var(--soft);color:#7d4653;font-size:13px}.typing{font-size:12px;color:var(--muted);padding-left:8px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;border-top:1px solid var(--line);padding-top:28px}.feature{display:flex;gap:12px}.feature b{color:var(--red);font-size:13px}.feature span{font-size:13px;color:var(--muted)}.feature strong{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}.quiz-wrap{max-width:760px;margin:auto}.quiz-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}.count{font-size:14px;color:var(--muted)}.count strong{font-size:36px;color:var(--red);font-weight:650}.dimension{font-size:13px;color:var(--green)}.progress{height:4px;background:#e6dfe0;border-radius:10px;margin-bottom:34px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:var(--red);transition:width .25s}.question-card{background:var(--card);border:1px solid rgba(255,255,255,.9);border-radius:24px;padding:38px;box-shadow:var(--shadow)}.question-card h2{font-size:clamp(23px,3.5vw,31px);font-weight:650;line-height:1.5;margin:0 0 26px;letter-spacing:-.02em}.options{display:grid;gap:12px}.option{display:flex;align-items:flex-start;gap:15px;width:100%;text-align:left;border:1px solid var(--line);border-radius:15px;background:transparent;color:var(--ink);padding:16px 17px;transition:border-color .15s,background .15s,transform .15s;line-height:1.65}.option:hover{border-color:var(--red);background:#fff6f7;transform:translateX(3px)}.option .letter{flex:0 0 27px;height:27px;display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;color:var(--muted);font-size:12px}.option.selected{border-color:var(--red);background:#fae8ec}.option.selected .letter{background:var(--red);border-color:var(--red);color:white}.quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px}.result-wrap{max-width:880px;margin:auto}.result-top{text-align:center;margin-bottom:32px}.result-top .eyebrow{margin-bottom:12px}.result-name{font-size:clamp(42px,7vw,70px);margin:4px 0 10px;line-height:1.2;color:var(--red);font-weight:750;letter-spacing:-.04em}.result-title{font-size:19px;margin:0;color:var(--green)}.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{background:var(--card);border:1px solid rgba(255,255,255,.9);border-radius:22px;padding:30px;box-shadow:var(--shadow)}.panel h3{margin:0 0 16px;font-size:14px;letter-spacing:.08em;color:var(--muted)}.result-copy{font-size:16px;margin:0 0 20px}.history{border-left:3px solid var(--green);padding-left:15px;color:var(--muted);font-size:13px}.strengths{display:flex;flex-wrap:wrap;gap:8px;margin:17px 0 0;padding:0;list-style:none}.strengths li{padding:5px 11px;border:1px solid var(--line);border-radius:20px;font-size:12px;color:var(--green)}.watch{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:14px}.match{display:grid;grid-template-columns:92px 1fr 40px;gap:11px;align-items:center;margin:15px 0;font-size:12px}.bar{height:6px;background:#eee5e6;border-radius:8px;overflow:hidden}.bar span{display:block;height:100%;background:var(--green)}.match:first-of-type .bar span{background:var(--red)}.match output{text-align:right;color:var(--muted)}.result-actions{justify-content:center;margin:30px 0 16px}.disclaimer{text-align:center;color:var(--muted);font-size:12px;max-width:620px;margin:0 auto}.nickname-row{display:flex;justify-content:center;margin:26px 0 0}.nickname-row label{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}.nickname-row input{width:180px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);padding:10px 13px}.footer{border-top:1px solid var(--line);padding:20px 0 28px;display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--card);padding:11px 20px;border-radius:12px;font-size:13px;transition:.2s;pointer-events:none;z-index:5}.toast.show{opacity:1;transform:translate(-50%,0)}#share-canvas{display:none}
+    @media(max-width:760px){.shell{width:calc(100% - 28px)}.topbar{height:70px}.topnote{display:none}.view{padding:36px 0 48px}.hero{grid-template-columns:1fr;gap:30px}.hero-art{min-height:350px;order:-1}.phone{width:280px;padding:18px}.features{grid-template-columns:1fr;margin-top:36px;gap:16px}.feature{align-items:center}.question-card{padding:25px 19px;border-radius:20px}.result-grid{grid-template-columns:1fr}.result-actions{display:grid;grid-template-columns:1fr}.result-actions button{width:100%}.footer{gap:20px}.nickname-row label{display:grid;justify-items:center}.match{grid-template-columns:86px 1fr 38px}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
   <div class="shell">
-    <header class="topbar">
-      <div class="brand"><span class="brand-mark">照</span><span>照人</span></div>
-      <div class="topnote">以今人的选择，照见古人的行事风格</div>
-    </header>
-
+    <header class="topbar"><div class="brand"><span class="brand-mark">♡</span><span>暧昧加载中</span></div><div class="topnote">不猜对方了，先看看自己</div></header>
     <main>
       <section id="start-view" class="view">
         <div class="hero">
           <div>
-            <p class="eyebrow">原创历史人格趣味测试</p>
-            <h1>你的行事风格<br>像哪位<br><em>历史人物</em>？</h1>
-            <p class="lead">不考年代，不背典故。透过 12 个真实日常选择，看看你的决断、创造与处世方式，与哪位历史人物最有共鸣。</p>
-            <div class="actions">
-              <button id="start-btn" class="primary">开始测试 <span aria-hidden="true">→</span></button>
-              <button id="reset-progress-btn" class="text-button" hidden>放弃上次进度</button>
-              <span class="micro">约 2 分钟 · 无需登录</span>
-            </div>
+            <p class="eyebrow">原创暧昧期反应测试</p>
+            <h1>你在暧昧期<br>到底是<em>哪一派</em>？</h1>
+            <p class="lead">不是测你有多会谈恋爱。就看看消息一来、对方一靠近、气氛突然安静时，你的第一反应是什么。</p>
+            <div class="actions"><button id="start-btn" class="primary">开始测试 <span aria-hidden="true">→</span></button><button id="reset-progress-btn" class="text-button" hidden>放弃上次进度</button><span class="micro">12 个瞬间 · 约 2 分钟</span></div>
           </div>
           <div class="hero-art" aria-hidden="true">
-            <div class="arch"></div>
-            <div class="figure-card">
-              <div class="seal">人</div>
-              <h2>性有千面</h2>
-              <p>六类人物 · 十二种选择</p>
-              <div class="lines"><i></i><i></i><i></i></div>
+            <div class="phone">
+              <div class="phone-top"><span class="avatar">☺</span><strong>正在输入…</strong><span class="online">刚刚</span></div>
+              <div class="chat">
+                <div class="bubble left">周末要不要见一面？</div>
+                <div class="bubble thought">想回“好呀”。但先这么回，会不会显得我太主动？</div>
+                <div class="bubble right">看情况吧，最近有点忙。</div>
+                <div class="typing">三分钟后：其实也不是很忙……</div>
+              </div>
             </div>
           </div>
         </div>
         <div class="features">
-          <div class="feature"><b>01</b><span><strong>日常情境</strong>答案没有对错，凭直觉选择</span></div>
-          <div class="feature"><b>02</b><span><strong>六维对照</strong>看见主导风格与辅助特质</span></div>
-          <div class="feature"><b>03</b><span><strong>专属结果卡</strong>保存图片，分享给朋友</span></div>
+          <div class="feature"><b>01</b><span><strong>只聊暧昧期</strong>回消息、被靠近、想退缩</span></div>
+          <div class="feature"><b>02</b><span><strong>没有好坏答案</strong>六种反应，不是六种毛病</span></div>
+          <div class="feature"><b>03</b><span><strong>结果能说人话</strong>像你的瞬间，也给你一句小练习</span></div>
         </div>
       </section>
-
       <section id="quiz-view" class="view" hidden>
         <div class="quiz-wrap">
-          <div class="quiz-head">
-            <div class="count"><strong id="current-number">1</strong> / <span id="total-number">12</span></div>
-            <div id="question-theme" class="dimension"></div>
-          </div>
+          <div class="quiz-head"><div class="count"><strong id="current-number">1</strong> / <span id="total-number">12</span></div><div id="question-theme" class="dimension"></div></div>
           <div class="progress" role="progressbar" aria-label="答题进度" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><span id="progress-bar"></span></div>
-          <div class="question-card">
-            <h2 id="question-text"></h2>
-            <div id="options" class="options"></div>
-          </div>
-          <div class="quiz-foot">
-            <button id="back-btn" class="text-button">← 上一题</button>
-            <span class="micro">选择后自动进入下一题</span>
-          </div>
+          <div class="question-card"><h2 id="question-text"></h2><div id="options" class="options"></div></div>
+          <div class="quiz-foot"><button id="back-btn" class="text-button">← 上一题</button><span class="micro">选最像你的，不选最体面的</span></div>
         </div>
       </section>
-
       <section id="result-view" class="view" hidden>
         <div class="result-wrap">
-          <div class="result-top">
-            <p class="eyebrow">你的历史人物对照</p>
-            <h2 id="result-name" class="result-name"></h2>
-            <p id="result-title" class="result-title"></p>
-          </div>
+          <div class="result-top"><p class="eyebrow">你在暧昧期更像</p><h2 id="result-name" class="result-name"></h2><p id="result-title" class="result-title"></p></div>
           <div class="result-grid">
-            <article class="panel">
-              <h3>你的行事侧写</h3>
-              <p id="result-copy" class="result-copy"></p>
-              <ul id="result-strengths" class="strengths"></ul>
-              <p id="result-watch" class="watch"></p>
-              <p id="result-history" class="history"></p>
-            </article>
-            <article class="panel">
-              <h3>六类风格契合度</h3>
-              <div id="matches"></div>
-              <p class="micro">契合度来自本次选项计分，用于人物对照，不代表能力或心理测量分数。</p>
-            </article>
+            <article class="panel"><h3>你的第一反应</h3><p id="result-copy" class="result-copy"></p><ul id="result-strengths" class="strengths"></ul><p id="result-watch" class="watch"></p><p id="result-history" class="history"></p></article>
+            <article class="panel"><h3>你的六种反应倾向</h3><div id="matches"></div><p class="micro">倾向来自本次选项计分，只用于这次趣味对照，不是心理测量分数。</p></article>
           </div>
-          <div class="actions result-actions">
-            <button id="download-btn" class="primary">保存结果卡</button>
-            <button id="share-btn" class="secondary">复制分享文案</button>
-            <button id="restart-btn" class="text-button">再测一次</button>
-          </div>
-          <p class="disclaimer">本测试为原创娱乐内容，不是专业心理评估，也不评价历史人物的功过。答题记录仅保存在当前浏览器，不会上传个人信息。</p>
+          <div class="nickname-row"><label>结果卡署名（可选，只保存在本机）<input id="nickname" maxlength="12" placeholder="写一个昵称"></label></div>
+          <div class="actions result-actions"><button id="download-btn" class="primary">保存结果卡</button><button id="share-btn" class="secondary">复制分享文案</button><button id="restart-btn" class="text-button">再测一次</button></div>
+          <p class="disclaimer">这是原创娱乐测试，不是依恋诊断或心理咨询。你的答案和昵称仅保存在当前浏览器，不会上传个人信息。</p>
         </div>
       </section>
     </main>
-
-    <footer class="footer"><span>照人 · 原创趣味测试</span><span>以古为镜，不止于标签</span></footer>
+    <footer class="footer"><span>暧昧加载中 · 原创趣味测试</span><span>先理解自己，再决定怎么靠近</span></footer>
   </div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <canvas id="share-canvas" width="1080" height="1350"></canvas>
-
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><canvas id="share-canvas" width="1080" height="1350"></canvas>
   <script>
     (() => {
       const figures = {
-        zhuge:{name:'诸葛亮',title:'深思熟虑的布局者',seal:'略',copy:'你习惯先看全局，再决定第一步落在哪里。面对复杂任务，你倾向梳理变量、预留后手，用清晰的路径降低不确定性。你的可靠，往往来自那些别人尚未注意到的细节。',strengths:['系统思考','风险预判','长期规划'],watch:'需要留意：准备过久可能错过窗口，偶尔让一个小实验代替完美预案。',history:'历史侧影：诸葛亮是三国时期蜀汉政治家、军事家。这里取其运筹帷幄、重视秩序的公众形象，而非对历史人物作完整评价。'},
-        wang:{name:'王阳明',title:'知行合一的破局者',seal:'行',copy:'你更愿意在行动中理解问题。与其等待所有答案出现，你会先迈出可验证的一步，再根据反馈校准方向。你身上有一种把想法变成现实、把压力转成行动的力量。',strengths:['行动驱动','快速复盘','内心笃定'],watch:'需要留意：行动很快时，也要给不同意见留一点空间，避免把坚持变成固执。',history:'历史侧影：王阳明是明代哲学家、军事家，以“知行合一”的思想广为人知。这里取其重实践、重自省的精神侧面。'},
-        su:{name:'苏轼',title:'豁达自由的创造者',seal:'趣',copy:'你擅长在限制里发现新的可能。环境变化时，你常能换个角度化解紧绷，用幽默、表达和创造力为自己与他人打开空间。你的灵感不是逃避现实，而是重新理解现实。',strengths:['创造表达','适应变化','幽默豁达'],watch:'需要留意：新鲜感很多时，为真正重要的事保留持续推进的耐心。',history:'历史侧影：苏轼是北宋文学家、书画家。这里取其旷达、多产和善于从日常发现意趣的公众形象。'},
-        li:{name:'李清照',title:'细腻敏锐的洞察者',seal:'察',copy:'你对情绪、细节和氛围有敏锐的感知。别人看到“发生了什么”，你还会留意“为什么这样感受”。这种洞察力让你在表达、协作和判断人心时，常能触及真正的需要。',strengths:['细腻洞察','真诚表达','感知他人'],watch:'需要留意：敏锐不等于反复内耗，不必替所有情绪负责，也不必过度解读每句话。',history:'历史侧影：李清照是宋代词人，以细腻而富有个性的文学表达著称。这里取其敏锐感受和真挚表达的艺术侧面。'},
-        zhang:{name:'张骞',title:'无惧未知的远行者',seal:'远',copy:'陌生领域不会轻易让你退缩，反而容易唤起你的好奇。你愿意接触不同的人、走未经验证的路，并在漫长过程中守住目标。你的成长常发生在熟悉边界之外。',strengths:['探索未知','韧性坚持','开放连接'],watch:'需要留意：远行也需要补给，及时确认资源和阶段目标，能让探索走得更远。',history:'历史侧影：张骞是汉代外交家、探险家，以出使西域、开拓交流通道闻名。这里取其探索与坚韧的公众形象。'},
-        guan:{name:'管仲',title:'务实高效的组织者',seal:'治',copy:'你关注事情怎样真正运转起来。面对纷乱局面，你擅长明确分工、配置资源、建立规则，把好的意图变成可持续的安排。你看重结果，也懂得结果来自系统而非一时热闹。',strengths:['组织协调','资源整合','务实执行'],watch:'需要留意：效率之外，也要保留对人的感受与例外情况的关注。',history:'历史侧影：管仲是春秋时期齐国政治家，以治理和改革实践闻名。这里取其务实、重制度与组织的公众形象。'}
+        direct:{name:'直球行动派',short:'直球',seal:'直',title:'喜欢就让你知道，不想靠猜',copy:'你很像那个会直接把“周末要不要见面”发出去的人。不是不紧张，而是你更怕两个人绕了半天，最后谁也不知道谁在想什么。你的坦率会让关系省很多力气。',strengths:['表达直接','愿意推进','不爱内耗'],watch:'容易卡住的时候：对方节奏慢，你可能会把“马上说清楚”当成唯一答案。',history:'一句小练习：直球不用改，只是说完自己的想法后，也留一点时间等对方接。',share:'我不想再玩猜心游戏了。'},
+        slow:{name:'慢热观察派',short:'慢热',seal:'慢',title:'不是高冷，是在确认你是不是认真',copy:'你更像会先看对方连续做什么，而不是只听一句“我喜欢你”的人。你不容易因为一点甜头就冲进去，但一旦确认对方可靠，你的回应往往很认真。',strengths:['观察一致','谨慎投入','重视兑现'],watch:'容易卡住的时候：观察太久，对方可能只读到距离，读不到你其实已经在意。',history:'一句小练习：不必提前交心，可以只多说一句“我愿意继续了解你”。',share:'我可能有点慢，但不是没感觉。'},
+        steady:{name:'稳定回应派',short:'稳定',seal:'稳',title:'不玩消失，也不拿节奏当筹码',copy:'你更像有一说一、忙完会回的人。你不太愿意用忽冷忽热证明自己重要，也不喜欢把对方的回消息速度当成考题。你要的不是多会撩，是相处起来踏实。',strengths:['回应清楚','情绪稳定','尊重彼此'],watch:'容易卡住的时候：你太讲理时，可能忘了对方有时要的是一点情绪波动和明确偏爱。',history:'一句小练习：除了“我都行”，也可以告诉对方你真实更喜欢哪一个。',share:'我喜欢踏实的喜欢。'},
+        drama:{name:'小剧场敏感派',short:'小剧场',seal:'想',title:'一条消息，心里已经演了八集',copy:'你很像会把“嗯”和“嗯嗯”分出八种意思的人。你不是故意想太多，而是细节一变，你就很容易感觉到关系是不是也变了。你的感受丰富，只是有时比证据跑得快。',strengths:['感受细腻','在意细节','共情力强'],watch:'容易卡住的时候：脑子补完一场戏后，你可能把猜测当成了对方真正的意思。',history:'一句小练习：先写下“事实是什么”，再写下“我猜的是什么”，把两句话分开。',share:'我的脑内已经演到第八集了。'},
+        retreat:{name:'试探撤退派',short:'试探',seal:'退',title:'想靠近，也怕先伸手会掉价',copy:'你很像嘴上说“看情况”，其实也会等对方消息的人。你不是不想靠近，只是主动之后如果没有得到同等回应，你会很快缩回去。你在乎的不是输赢，是自己会不会显得多余。',strengths:['自我保护','观察回应','分寸敏感'],watch:'容易卡住的时候：你把试探藏得太深，对方可能只看见冷淡，看不见你其实希望被再靠近一步。',history:'一句小练习：少用一次反话，把“随便你”换成一个真实但不勉强的请求。',share:'我想靠近，但不想显得多余。'},
+        space:{name:'自由边界派',short:'自由',seal:'界',title:'喜欢你，也想保留自己的节奏',copy:'你很像即使心里有好感，也不会立刻把全部生活让出来的人。你需要自己的安排、朋友和独处时间。对你来说，亲密不是时刻黏在一起，而是靠近之后仍然能做真实的自己。',strengths:['边界清楚','生活独立','尊重空间'],watch:'容易卡住的时候：你只表达“我需要空间”，对方可能听不懂你其实也在意这段关系。',history:'一句小练习：说边界时补一句在意，例如“我想自己待会儿，但明天还是很想见你”。',share:'靠近我，也请给我一点呼吸感。'}
       };
       const option = (text, primary, secondary) => ({text, weights:{[primary]:2,[secondary]:1}});
       const questions = [
-        {theme:'面对复杂',text:'一个两周后交付的新项目突然交给你，你会先做什么？',options:[option('画出任务、风险和依赖关系，再安排先后','zhuge','guan'),option('先做出最小版本，用真实反馈决定下一步','wang','zhang'),option('寻找不同寻常的切入点，让项目更有记忆点','su','li'),option('先弄清相关人的期待和顾虑，再决定方案','li','zhuge')]},
-        {theme:'处理分歧',text:'团队对方案争执不下，你更可能如何打破僵局？',options:[option('把争议拆成事实、目标和假设，逐项核对','zhuge','wang'),option('明确决策规则和分工，避免继续空转','guan','zhuge'),option('换一种比喻或角度，让大家跳出原来的立场','su','li'),option('分别听听每个人真正担心的是什么','li','guan')]},
-        {theme:'走入陌生',text:'来到一座完全陌生的城市，你最想怎样度过第一天？',options:[option('查好路线与背景，按优先级慢慢探索','zhuge','zhang'),option('不设定太多，先走出去，遇到有趣的就停下','zhang','su'),option('寻找市集、老店和当地故事，感受城市性格','li','su'),option('和当地人聊聊，快速找到最值得体验的地方','guan','zhang')]},
-        {theme:'信息不全',text:'必须做一个重要决定，但信息只有七成，你会？',options:[option('补齐关键缺口，同时准备不同情形的预案','zhuge','guan'),option('选择可逆的小步行动，边做边获得信息','wang','zhang'),option('相信过往经验形成的直觉，不再反复比较','li','wang'),option('换一个问题框架，看看是否有第三条路','su','zhuge')]},
-        {theme:'安排生活',text:'一个完全没有安排的周末，最接近你的理想状态是？',options:[option('去没去过的地方，哪怕只是随便搭一班车','zhang','wang'),option('读书、写字、做饭，把日常过得有滋有味','su','li'),option('整理房间和计划，让生活重新恢复秩序','guan','zhuge'),option('留一段安静时间，梳理最近的情绪和想法','li','wang')]},
-        {theme:'遭遇挫折',text:'投入很久的事情没有按预期发展，你通常会？',options:[option('复盘每个环节，找到问题后重新布局','zhuge','guan'),option('接受一时的失意，换个方式继续把日子过好','su','zhang'),option('先确认初心是否还在，再决定是否坚持','wang','li'),option('把它当成一段弯路，也许新的入口就在这里','zhang','su')]},
-        {theme:'完成创作',text:'需要做一个让大家愿意主动分享的作品，你会重点打磨？',options:[option('独特的表达和趣味，让人看了有共鸣','su','li'),option('准确说出大家没说出口的感受','li','su'),option('参与路径足够简单，每一步都很顺','guan','zhuge'),option('加入探索感，让人想知道下一个结果','zhang','wang')]},
-        {theme:'资源有限',text:'预算和时间都只有预期的一半，你会优先？',options:[option('重排资源，保留最能产生结果的部分','guan','zhuge'),option('缩小范围先跑通，证明有效再争取资源','wang','guan'),option('用创意替代昂贵投入，做出不同的味道','su','zhang'),option('找外部伙伴合作，打开新的资源来源','zhang','guan')]},
-        {theme:'朋友眼中',text:'老朋友最可能用哪句话形容你？',options:[option('“你总能看见我都没注意到的情绪。”','li','su'),option('“只要说定一件事，你就会真的去做。”','wang','guan'),option('“和你在一起，总能发现新鲜玩法。”','su','zhang'),option('“再乱的事情交给你，也能慢慢理顺。”','guan','zhuge')]},
-        {theme:'学习新知',text:'学习一项完全陌生的技能，你最喜欢的方式是？',options:[option('建立知识框架，理解原理后逐步深入','zhuge','li'),option('直接做一个作品，在问题里学习','wang','zhang'),option('找不同领域的方法互相启发','su','zhang'),option('加入社群或找同伴，交换经验一起练','guan','li')]},
-        {theme:'面对诱惑',text:'两个机会同时出现：一个稳定，一个更有想象空间。你会？',options:[option('列出长期收益和代价，选择更符合规划的那个','zhuge','guan'),option('评估底线后，给新机会一次小规模试验','wang','zhang'),option('选择更能发挥创造力、让自己有热情的那个','su','li'),option('看哪个能接触更广阔的人和世界','zhang','su')]},
-        {theme:'理想成就',text:'回顾一段经历时，哪种评价最让你满足？',options:[option('“你建的方法，后来的人一直能用。”','guan','zhuge'),option('“你在最难的时候，仍然守住了想做的事。”','wang','li'),option('“你让很多人看见了从未见过的世界。”','zhang','su'),option('“你留下的作品，让人多年后仍有共鸣。”','li','su')]}
+        {theme:'消息来了',text:'对方突然问你：“周末有空吗？”你会怎么回？',options:[option('“有啊，哪天？不如顺便把地方也定了。”','direct','steady'),option('先想想自己是不是想见，再认真回复','slow','space'),option('心里先高兴一下，再琢磨这句话是不是有意思','drama','retreat'),option('有就有，没有就直说，不会故意拖着','steady','direct')]},
+        {theme:'对方没回',text:'聊得好好的，对方突然六个小时没回消息。你更像？',options:[option('开始回看聊天记录，想是不是自己哪句说错了','drama','retreat'),option('先当对方在忙，继续观察之后是不是一直这样','slow','steady'),option('该做什么做什么，真有急事会再直接问一句','steady','space'),option('想发消息又忍住，怕自己显得太主动','retreat','drama')]},
+        {theme:'想见面了',text:'其实你很想见对方，但你又不想显得太明显。你会？',options:[option('直接找一个具体的理由约对方出来','direct','steady'),option('发一点动态或暗示，希望对方先来约','retreat','drama'),option('再多看几天，确认对方也有同样意思','slow','retreat'),option('约个短时间喝咖啡，见面也不用有压力','space','direct')]},
+        {theme:'进度加快',text:'认识没多久，对方就很认真地表白了。你的第一反应是？',options:[option('有点快，我想多了解一点再回答','slow','space'),option('喜欢就答应，不喜欢也会直接说清楚','direct','steady'),option('有好感，但想先聊聊我们能不能把节奏放慢','space','slow'),option('很开心，然后反复想每句话到底几分真','drama','slow')]},
+        {theme:'约会之后',text:'第一次约会结束，你回到家会做什么？',options:[option('告诉对方今天很开心，想见就再约下一次','direct','steady'),option('礼貌说句“我到了，今天谢谢你”','steady','slow'),option('等对方先发，不然显得我更在意','retreat','drama'),option('回想相处细节，再决定要不要继续靠近','slow','drama')]},
+        {theme:'出现别人',text:'你发现对方和另一个人聊得很开心，但你们还没确定关系。你会？',options:[option('嘴上说没事，心里已经开始补完整段剧情','drama','retreat'),option('找合适的时机直接问，不想靠猜','direct','steady'),option('故意也冷一点，装作自己没那么在意','retreat','space'),option('提醒自己还没约定排他，先看对方整体怎么对我','space','slow')]},
+        {theme:'突然变冷',text:'前几天还很热络，对方这两天明显冷了下来。你会？',options:[option('直接问：“最近是忙，还是不太想继续聊了？”','direct','steady'),option('也减少主动，看看对方会不会来找我','retreat','drama'),option('先观察是短期状态，还是持续变化','slow','steady'),option('平静说一句：“感觉你最近有点忙，有空再聊。”','steady','space')]},
+        {theme:'被记住',text:'对方记住了你随口提过的一个小喜好。你会？',options:[option('立刻觉得：是不是我对对方来说很特别？','drama','slow'),option('很开心，也自然记住对方的一件小事','steady','direct'),option('会感动，但更想知道这种用心能不能持续','slow','steady'),option('感谢这份用心，但不急着给它下定义','space','slow')]},
+        {theme:'持续主动',text:'对方连续三天都主动找你，而且每次都认真接话。你会？',options:[option('也放开一点，主动分享更多自己的生活','direct','steady'),option('慢慢放松，开始相信对方可能真的有意','slow','drama'),option('很开心，但又怕自己习惯之后对方突然不来了','retreat','drama'),option('享受聊天，也保留原来的作息和安排','space','steady')]},
+        {theme:'朋友追问',text:'朋友问你：“你们现在到底算什么？”你更像怎么答？',options:[option('“我也不知道，反正每天想法挺多的。”','drama','retreat'),option('“还在了解，暂时不急着定义。”','slow','space'),option('“我挺喜欢的，正在接触，也想看看合不合适。”','direct','steady'),option('“有好感，但我们都还想保留一点自己的空间。”','space','slow')]},
+        {theme:'需要表达',text:'对方问你：“我总觉得不知道你想要什么。”你会？',options:[option('直接说自己在意什么、希望怎么相处','direct','steady'),option('和对方认真聊一次彼此的期待','steady','slow'),option('嘴上说“也没什么”，其实希望对方再懂一点','retreat','drama'),option('把自己的感觉整理清楚，挑重要的慢慢说','slow','space')]},
+        {theme:'真正想要',text:'如果只能选一种暧昧状态，你更想要哪一种？',options:[option('稳定回应，不用每天猜对方在不在','steady','slow'),option('明确喜欢，不用谁先开口谁吃亏','direct','retreat'),option('不用催我，让我慢慢确认也来得及','slow','space'),option('我不说你也懂，细节里都是偏爱','drama','retreat')]}
       ];
-      const storageKey = 'zhaoren-history-v1';
-      const eventKey = 'zhaoren-events-v1';
+      const storageKey = 'animei-reaction-v1';
+      const eventKey = 'animei-events-v1';
       const $ = id => document.getElementById(id);
       const views = ['start-view','quiz-view','result-view'];
       let state = {answers:[],current:0,completed:false};
       let lastResult = null;
       let toastTimer;
-
       function load() {
-        try {
-          const saved = JSON.parse(localStorage.getItem(storageKey));
-          if (saved && Array.isArray(saved.answers)) state = {...state,...saved};
-        } catch {}
+        try { const saved = JSON.parse(localStorage.getItem(storageKey)); if (saved && Array.isArray(saved.answers)) state = {...state,...saved}; } catch {}
         $('reset-progress-btn').hidden = !state.answers.length || state.completed;
         $('start-btn').innerHTML = state.answers.length && !state.completed ? '继续测试 <span aria-hidden="true">→</span>' : '开始测试 <span aria-hidden="true">→</span>';
         if (state.completed && state.answers.length === questions.length) showResult();
       }
-      function save() {
-        localStorage.setItem(storageKey, JSON.stringify(state));
-      }
-      function log(type, detail = {}) {
-        try {
-          const events = JSON.parse(localStorage.getItem(eventKey) || '[]');
-          events.push({type,at:new Date().toISOString(),...detail});
-          localStorage.setItem(eventKey, JSON.stringify(events.slice(-200)));
-        } catch {}
-      }
-      function showView(id) {
-        views.forEach(view => $(view).hidden = view !== id);
-        window.scrollTo({top:0,behavior:'instant'});
-      }
-      function start() {
-        if (state.completed) state = {answers:[],current:0,completed:false};
-        state.current = Math.min(state.answers.length, questions.length - 1);
-        save();
-        log('start',{resumed:state.answers.length > 0});
-        showView('quiz-view');
-        renderQuestion();
-      }
+      function save() { localStorage.setItem(storageKey, JSON.stringify(state)); }
+      function log(type, detail = {}) { try { const events = JSON.parse(localStorage.getItem(eventKey) || '[]'); events.push({type,at:new Date().toISOString(),...detail}); localStorage.setItem(eventKey, JSON.stringify(events.slice(-200))); } catch {} }
+      function showView(id) { views.forEach(view => $(view).hidden = view !== id); window.scrollTo({top:0,behavior:'instant'}); }
+      function start() { if (state.completed) state = {answers:[],current:0,completed:false}; state.current = Math.min(state.answers.length, questions.length - 1); save(); log('start',{resumed:state.answers.length > 0}); showView('quiz-view'); renderQuestion(); }
       function renderQuestion() {
         const question = questions[state.current];
-        $('current-number').textContent = state.current + 1;
-        $('total-number').textContent = questions.length;
-        $('question-theme').textContent = question.theme;
-        $('question-text').textContent = question.text;
-        $('progress-bar').style.width = `${state.current / questions.length * 100}%`;
-        document.querySelector('.progress').setAttribute('aria-valuenow',state.current);
-        $('back-btn').style.visibility = state.current ? 'visible' : 'hidden';
-        const options = $('options');
-        options.replaceChildren();
-        question.options.forEach((item,index) => {
-          const button = document.createElement('button');
-          button.className = 'option' + (state.answers[state.current] === index ? ' selected' : '');
-          button.dataset.index = index;
-          button.innerHTML = `<span class="letter">${String.fromCharCode(65 + index)}</span><span>${item.text}</span>`;
-          button.addEventListener('click',() => answer(index));
-          options.append(button);
-        });
+        $('current-number').textContent = state.current + 1; $('total-number').textContent = questions.length; $('question-theme').textContent = question.theme; $('question-text').textContent = question.text;
+        $('progress-bar').style.width = `${state.current / questions.length * 100}%`; document.querySelector('.progress').setAttribute('aria-valuenow',state.current); $('back-btn').style.visibility = state.current ? 'visible' : 'hidden';
+        const options = $('options'); options.replaceChildren();
+        question.options.forEach((item,index) => { const button = document.createElement('button'); button.className = 'option' + (state.answers[state.current] === index ? ' selected' : ''); button.dataset.index = index; button.innerHTML = `<span class="letter">${String.fromCharCode(65 + index)}</span><span>${item.text}</span>`; button.addEventListener('click',() => answer(index)); options.append(button); });
       }
       function answer(index) {
-        state.answers[state.current] = index;
-        log('answer',{question:state.current + 1,option:index});
-        if (state.current < questions.length - 1) {
-          state.current++;
-          save();
-          renderQuestion();
-        } else {
-          state.completed = true;
-          save();
-          log('complete',{result:calculate().primary});
-          showResult();
-        }
+        state.answers[state.current] = index; log('answer',{question:state.current + 1,option:index});
+        if (state.current < questions.length - 1) { state.current++; save(); renderQuestion(); }
+        else { state.completed = true; save(); log('complete',{result:calculate().primary}); showResult(); }
       }
-      function back() {
-        if (!state.current) return;
-        state.current--;
-        save();
-        renderQuestion();
-      }
+      function back() { if (!state.current) return; state.current--; save(); renderQuestion(); }
       function calculate() {
         const scores = Object.fromEntries(Object.keys(figures).map(key => [key,0]));
-        state.answers.forEach((answer,index) => {
-          const weights = questions[index]?.options[answer]?.weights || {};
-          Object.entries(weights).forEach(([key,value]) => scores[key] += value);
-        });
+        state.answers.forEach((answer,index) => { const weights = questions[index]?.options[answer]?.weights || {}; Object.entries(weights).forEach(([key,value]) => scores[key] += value); });
         const maxScores = Object.fromEntries(Object.keys(figures).map(key => [key,questions.reduce((total,question) => total + Math.max(0,...question.options.map(item => item.weights[key] || 0)),0)]));
-        const ranked = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+        const ranked = Object.entries(scores).sort((a,b) => (b[1] / maxScores[b[0]]) - (a[1] / maxScores[a[0]]));
         return {scores,maxScores,ranked,primary:ranked[0][0],secondary:ranked[1][0]};
       }
       function showResult() {
-        lastResult = calculate();
-        const figure = figures[lastResult.primary];
-        $('result-name').textContent = figure.name;
-        $('result-title').textContent = figure.title;
-        $('result-copy').textContent = figure.copy;
-        $('result-history').textContent = figure.history;
-        $('result-watch').textContent = figure.watch;
-        $('result-strengths').replaceChildren(...figure.strengths.map(text => {
-          const li = document.createElement('li'); li.textContent = text; return li;
-        }));
-        const matches = $('matches');
-        matches.replaceChildren();
-        lastResult.ranked.forEach(([key,score]) => {
-          const percent = Math.round(score / lastResult.maxScores[key] * 100);
-          const row = document.createElement('div');
-          row.className = 'match';
-          row.dataset.figure = key;
-          row.innerHTML = `<span>${figures[key].name}</span><div class="bar"><span style="width:${percent}%"></span></div><output>${percent}%</output>`;
-          matches.append(row);
-        });
+        lastResult = calculate(); const figure = figures[lastResult.primary];
+        $('result-name').textContent = figure.name; $('result-title').textContent = figure.title; $('result-copy').textContent = figure.copy; $('result-history').textContent = figure.history; $('result-watch').textContent = figure.watch;
+        $('result-strengths').replaceChildren(...figure.strengths.map(text => { const li = document.createElement('li'); li.textContent = text; return li; }));
+        const matches = $('matches'); matches.replaceChildren();
+        lastResult.ranked.forEach(([key,score]) => { const percent = Math.round(score / lastResult.maxScores[key] * 100); const row = document.createElement('div'); row.className = 'match'; row.dataset.figure = key; row.innerHTML = `<span>${figures[key].name}</span><div class="bar"><span style="width:${percent}%"></span></div><output>${percent}%</output>`; matches.append(row); });
         showView('result-view');
       }
-      function reset() {
-        state = {answers:[],current:0,completed:false};
-        lastResult = null;
-        save();
-        log('restart');
-        showView('start-view');
-        load();
-      }
-      function toast(text) {
-        clearTimeout(toastTimer);
-        $('toast').textContent = text;
-        $('toast').classList.add('show');
-        toastTimer = setTimeout(() => $('toast').classList.remove('show'),2200);
-      }
-      function shareText() {
-        const figure = figures[lastResult.primary];
-        return `我的行事风格像${figure.name}——${figure.title}。我的三个关键词是：${figure.strengths.join('、')}。12 道日常情境题，看看你的历史人物对照是谁：${location.href}`;
-      }
+      function reset() { state = {answers:[],current:0,completed:false}; lastResult = null; save(); log('restart'); showView('start-view'); load(); }
+      function toast(text) { clearTimeout(toastTimer); $('toast').textContent = text; $('toast').classList.add('show'); toastTimer = setTimeout(() => $('toast').classList.remove('show'),2200); }
+      function shareText() { const figure = figures[lastResult.primary]; return `我在暧昧期是${figure.name}——${figure.title}。${figure.share} 12 个真实瞬间，看看你是哪一派：${location.href}`; }
       async function share() {
         const text = shareText();
-        try {
-          await navigator.clipboard.writeText(text);
-          toast('分享文案已复制');
-        } catch {
-          const area = document.createElement('textarea');
-          area.value = text; document.body.append(area); area.select();
-          document.execCommand('copy'); area.remove(); toast('分享文案已复制');
-        }
+        try { await navigator.clipboard.writeText(text); toast('分享文案已复制'); }
+        catch { const area = document.createElement('textarea'); area.value = text; document.body.append(area); area.select(); document.execCommand('copy'); area.remove(); toast('分享文案已复制'); }
         log('share',{method:'copy',result:lastResult.primary});
       }
-      function wrap(ctx,text,x,y,maxWidth,lineHeight,maxLines = 4) {
-        let line = '', lines = [];
-        for (const char of text) {
-          if (ctx.measureText(line + char).width > maxWidth && line) { lines.push(line); line = char; }
-          else line += char;
-        }
-        lines.push(line);
-        lines.slice(0,maxLines).forEach((item,index) => ctx.fillText(item,x,y + index * lineHeight));
-      }
+      function wrap(ctx,text,x,y,maxWidth,lineHeight,maxLines = 4) { let line = '', lines = []; for (const char of text) { if (ctx.measureText(line + char).width > maxWidth && line) { lines.push(line); line = char; } else line += char; } lines.push(line); lines.slice(0,maxLines).forEach((item,index) => ctx.fillText(item,x,y + index * lineHeight)); }
       function drawCard() {
-        const figure = figures[lastResult.primary];
-        const canvas = $('share-canvas');
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#f3eddf'; ctx.fillRect(0,0,1080,1350);
-        ctx.strokeStyle = 'rgba(54,93,80,.25)'; ctx.lineWidth = 2; ctx.strokeRect(52,52,976,1246); ctx.strokeRect(68,68,944,1214);
-        ctx.fillStyle = '#a54432'; ctx.font = '30px serif'; ctx.fillText('照人 · 历史人物对照',110,145);
-        ctx.fillStyle = '#6d7168'; ctx.font = '24px sans-serif'; ctx.fillText('以今人的选择，照见古人的行事风格',110,195);
-        ctx.fillStyle = '#a54432'; ctx.fillRect(110,250,112,112);
-        ctx.fillStyle = '#fffdf7'; ctx.font = '64px serif'; ctx.textAlign = 'center'; ctx.fillText(figure.seal,166,328);
-        ctx.textAlign = 'left'; ctx.fillStyle = '#202723'; ctx.font = '500 104px serif'; ctx.fillText(figure.name,110,500);
-        ctx.fillStyle = '#365d50'; ctx.font = '38px serif'; ctx.fillText(figure.title,110,565);
-        ctx.strokeStyle = 'rgba(45,55,46,.18)'; ctx.beginPath(); ctx.moveTo(110,620); ctx.lineTo(970,620); ctx.stroke();
-        ctx.fillStyle = '#202723'; ctx.font = '32px serif'; wrap(ctx,figure.copy,110,695,860,54,5);
-        ctx.fillStyle = '#365d50'; ctx.font = '28px sans-serif'; ctx.fillText(figure.strengths.join('  ·  '),110,1035);
-        ctx.fillStyle = '#6d7168'; ctx.font = '23px sans-serif'; ctx.fillText('12 道日常情境题 · 六类人物对照',110,1190); ctx.fillText('原创趣味测试，非专业心理评估',110,1230);
+        const figure = figures[lastResult.primary]; const nickname = $('nickname').value.trim(); const canvas = $('share-canvas'); const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#f7f3ef'; ctx.fillRect(0,0,1080,1350); ctx.strokeStyle = 'rgba(71,120,108,.25)'; ctx.lineWidth = 2; ctx.strokeRect(52,52,976,1246); ctx.strokeRect(68,68,944,1214);
+        ctx.fillStyle = '#d65770'; ctx.font = '30px sans-serif'; ctx.fillText('暧昧加载中 · 我的反应类型',110,145);
+        ctx.fillStyle = '#79727b'; ctx.font = '24px sans-serif'; ctx.fillText(nickname ? `${nickname} 的专属结果` : '不猜对方了，先看看自己',110,195);
+        ctx.fillStyle = '#d65770'; ctx.fillRect(110,250,112,112); ctx.fillStyle = '#fffdfb'; ctx.font = '64px sans-serif'; ctx.textAlign = 'center'; ctx.fillText(figure.seal,166,328);
+        ctx.textAlign = 'left'; ctx.fillStyle = '#29252b'; ctx.font = '700 76px sans-serif'; ctx.fillText(figure.name,110,500);
+        ctx.fillStyle = '#47786c'; ctx.font = '34px sans-serif'; wrap(ctx,figure.title,110,565,860,52,2);
+        ctx.strokeStyle = 'rgba(55,43,53,.15)'; ctx.beginPath(); ctx.moveTo(110,650); ctx.lineTo(970,650); ctx.stroke();
+        ctx.fillStyle = '#29252b'; ctx.font = '31px sans-serif'; wrap(ctx,figure.copy,110,720,860,53,5);
+        ctx.fillStyle = '#47786c'; ctx.font = '27px sans-serif'; ctx.fillText(figure.strengths.join('  ·  '),110,1050);
+        ctx.fillStyle = '#79727b'; ctx.font = '23px sans-serif'; ctx.fillText('12 个暧昧期真实瞬间 · 六种反应类型',110,1190); ctx.fillText('原创趣味测试，非心理诊断',110,1230);
         return canvas;
       }
-      function download() {
-        const canvas = drawCard();
-        const link = document.createElement('a');
-        link.download = `我的历史人物对照-${figures[lastResult.primary].name}.png`;
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-        log('share',{method:'download',result:lastResult.primary});
-        toast('结果卡已生成');
-      }
-      $('start-btn').addEventListener('click',start);
-      $('back-btn').addEventListener('click',back);
-      $('restart-btn').addEventListener('click',reset);
-      $('reset-progress-btn').addEventListener('click',reset);
-      $('share-btn').addEventListener('click',share);
-      $('download-btn').addEventListener('click',download);
+      function download() { const canvas = drawCard(); const link = document.createElement('a'); link.download = `我的暧昧期反应-${figures[lastResult.primary].name}.png`; link.href = canvas.toDataURL('image/png'); link.click(); log('share',{method:'download',result:lastResult.primary}); toast('结果卡已生成'); }
+      $('start-btn').addEventListener('click',start); $('back-btn').addEventListener('click',back); $('restart-btn').addEventListener('click',reset); $('reset-progress-btn').addEventListener('click',reset); $('share-btn').addEventListener('click',share); $('download-btn').addEventListener('click',download);
       window.__zhaoren = {questions,figures,calculate,getState:() => structuredClone(state),getEvents:() => JSON.parse(localStorage.getItem(eventKey) || '[]'),shareText,drawCard};
       load();
     })();
